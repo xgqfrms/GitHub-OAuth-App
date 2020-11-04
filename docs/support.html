@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="author" content="xgqfrms">
+  <meta name="generator" content="VS code">
+  <title>OAuth support page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <!-- <link rel="stylesheet" href="./index.css"> -->
+</head>
+<body>
+  <header>
+    <h1>OAuth support page</h1>
+  </header>
+  <main>
+    <section id="app"></section>
+  </main>
+  <footer>
+    <p>copyright&copy; xgqfrms 2020</p>
+  </footer>
+  <!-- js -->
+  <script>
+    const log = console.log;
+    const params = new URLSearchParams(location.search);
+    // params.get(key);
+    // params.getAll(key);
+    for(const item of params) {
+      log(`item =`, item)
+      log(`key =`, item[0])
+      log(`value =`, item[1])
+    }
+    for(const item of params.entries()) {
+      // item === array
+      const [
+        key,
+        value,
+      ] = item;
+      log(`key =`, key)
+      log(`value =`, value)
+    }
+    for(const key of params.keys()) {
+      log(`key =`, key)
+    }
+    for(const value of params.values()) {
+      log(`value =`, value)
+    }
+  </script>
+</body>
+</html>
